@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt: MyBS Fullstack | Laurenz Maslo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">&larr; Zurück zum Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="bg-white py-5 border-bottom shadow-sm">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold">Spring Boot Webanwendung</h1>
+
+            <div class="mt-3 d-flex flex-wrap justify-content-center gap-2">
+                <span class="badge rounded-pill bg-primary p-2 px-3">Java</span>
+                
+                <span class="badge rounded-pill bg-success p-2 px-3">Spring Boot</span>
+                <span class="badge rounded-pill bg-success p-2 px-3">Spring Security</span>
+                <span class="badge rounded-pill bg-success p-2 px-3">Spring Data JDBC</span>
+                
+                <span class="badge rounded-pill bg-dark p-2 px-3">PostgreSQL</span>
+                
+                <span class="badge rounded-pill border text-dark p-2 px-3" style="background-color: #e9ecef;">Thymeleaf</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <section class="mb-5 bg-white p-4 rounded shadow-sm">
+                    <h2 class="h4 fw-bold border-bottom pb-2">Über das Projekt</h2>
+                    <p>
+                        Diese Web-Anwendung ermöglicht es Briefmarkensammlern ihre Sammlungen mit anderen zu Teilen.
+                        Jeder Nutzer kann die Sammlungen nach unterschiedlichen Kriterien filtern (z.B. Titel, Gebiet, Ausstellungsklasse oder Besitzer) und abrufen.
+                        Authentifizierte Nutzer können zudem neue Sammlungen hochladen (Bilder und Eckdaten).
+                        Falls keine passende Kategorie für die Sammlung existiert, dann kann eine neue (Unter-)kategorie hinzugefügt werden.
+                    </p>
+                </section>
+
+                <section class="mb-5 demo-section p-4 rounded shadow-sm border">
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <h2 class="h4 fw-bold mb-3">Live-Demo & Quellcode</h2>
+                            <p class="text-muted">
+                                Testen Sie die Anwendung oder werfen Sie einen Blick in das GitHub-Repository.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 mt-4">
+                                <a href="https://mybriefmarkensammlung.onrender.com" target="_blank" class="btn btn-primary btn-lg px-4 shadow-sm">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i> Anwendung starten
+                                </a>
+                                <a href="https://github.com/laurenz-bewerbung/mybriefmarkensammlung" target="_blank" class="btn btn-dark btn-lg px-4 shadow-sm">
+                                    <i class="bi bi-github me-2"></i> Code auf GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 mt-4 mt-md-0">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body bg-white rounded">
+                                    <h5 class="h6 fw-bold mb-3">Demo-Zugang</h5>
+                                    <div class="small">
+                                        <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                            <span class="text-muted">Nutzername:</span>
+                                            <span class="fw-bold"><code>test</code></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">Passwort:</span>
+                                            <span class="fw-bold"><code>123456</code></span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 x-small text-muted" style="font-size: 0.75rem;">
+                                        <i class="bi bi-info-circle me-1"></i> Hinweis: Das Hochfahren des Servers kann bis zu 60 Sek. dauern.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold mb-4">Domäne (ER-Diagramm)</h2>
+                    <div class="bg-white p-3 rounded shadow-sm text-center">
+                        <img src="er-diagram.png" 
+                             alt="UML Klassendiagramm des Datenmodells" 
+                             class="img-fluid rounded uml-diagram border"
+                             style="max-height: 500px;">
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold mb-4">Systemarchitektur</h2>
+                    <div class="row g-4">
+                        
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <div class="text-primary mb-3"><i class="bi bi-window-sidebar fs-1"></i></div>
+                                    <h3 class="h5 fw-bold">Frontend</h3>
+                                    <ul class="text-start small text-muted ps-3">
+                                        <li>Serverseitiges Rendering mit Thymeleaf</li>
+                                        <li>Responsive Gestaltung mit Bootstrap (teilweise KI generiert)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <div class="text-success mb-3"><i class="bi bi-cpu fs-1"></i></div>
+                                    <h3 class="h5 fw-bold">Backend</h3>
+                                    <ul class="text-start small text-muted ps-3">
+                                        <li>Einhaltung der Schichtenarchitektur<br>(Controller, Service, Repository, Domain)</li>
+                                        <li>Trennung von Domain-Models und DTOs</li>
+                                        <li>Login-System mit Spring Security</li>
+                                        <li>Passwort-Hashing mit BCrypt</li>
+                                        <li>Bildoptimierung mit Thumbnailator (Optimierung von Speicher und Ladezeit)</li>
+                                        <li>Exception-Handling für Datenbankzugriffe</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <div class="text-info mb-3"><i class="bi bi-database fs-1"></i></div>
+                                    <h3 class="h5 fw-bold">Datenbank</h3>
+                                    <ul class="text-start small text-muted ps-3">
+                                        <li>Persistente Speicherung mit PostgreSQL</li>
+                                        <li>Dateninteraktion mit Spring Data JDBC</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="text-warning me-4"><i class="bi bi-git fs-1"></i></div>
+                                    <div>
+                                        <h3 class="h5 fw-bold">Versionskontrolle</h3>
+                                        <p class="small text-muted mb-0">Code-Management mit Git.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="text-danger me-4"><i class="bi bi-box-seam fs-1"></i></div>
+                                    <div>
+                                        <h3 class="h5 fw-bold">Deployment</h3>
+                                        <p class="small text-muted mb-0">Containerisierung mittels Docker und Hosting auf Render.com.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

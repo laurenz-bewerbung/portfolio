@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt: Bachelorarbeit D3OS | Laurenz Maslo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">&larr; Zurück zum Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="bg-white py-5 border-bottom shadow-sm">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold">Entwicklung eines Shared-Memory-Systems für D3OS</h1>
+
+            <div class="mt-3 d-flex flex-wrap justify-content-center gap-2">
+                <span class="badge rounded-pill bg-primary p-2 px-3">Rust</span>
+                <span class="badge rounded-pill bg-success p-2 px-3">D3OS Kernel-Programmierung</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <section class="mb-5 bg-white p-4 rounded shadow-sm">
+                    <h2 class="h4 fw-bold border-bottom pb-2 mb-3">Über die Arbeit</h2>
+                    <p>
+                        In meiner Bachelorarbeit am Lehrstuhl für Betriebssysteme der Heinrich-Heine-Universität Düsseldorf habe ich das D3OS um eine Interprozesskommunikation (IPC) erweitert.
+                    </p>
+                    
+                    <p class="mb-2">
+                        <strong>Problemstellung:</strong><br>
+                        Bisheriger Datentransfer zwischen Adressräumen verlief ausschließlich über den Kernel. Um dem Mikrokernel-Prinzip von D3OS gerecht zu werden, sollte die Kommunikation direkt in den Userspace verlagert werden. 
+                        Da Prozesse durch isolierte virtuelle Adressräume strikt voneinander getrennt sind, ist ein direkter Datenaustausch im Userspace standardmäßig nicht möglich.
+                    </p>
+                    
+                    <p class="mb-0">
+                        <strong>Zielsetzung:</strong><br>
+                        Konzeption und Implementierung eines Shared-Memory-Systems, das es Prozessen erlaubt, denselben physischen Speicherbereich in mehrere Adressräume einzublenden. 
+                        Daten sind so ohne Kernel-Umweg sofort für alle Beteiligten sichtbar. Da geteilter Speicher selber noch keine synchronisierten Zugriffe bietet, wurde zusätzlich eine Named-Pipe entwickelt, 
+                        welche auf dem Shared-Memory-System basiert.
+                    </p>
+                </section>
+
+                <section class="mb-5 demo-section p-4 rounded shadow-sm border bg-white">
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <h2 class="h4 fw-bold mb-3">Quellcode</h2>
+                            <p class="text-muted">
+                                Die Implementierung des Shared-Memory-Systems können Sie im offiziellen D3OS Repository einsehen. Die Named-Pipe wurde noch nicht gemerged.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 mt-4">
+                                <a href="https://github.com/hhu-bsinfo/D3OS/commit/c0ea74014c1194deacee9e9f5ed1e0936c2a81ed" target="_blank" class="btn btn-dark btn-lg px-4 shadow-sm">
+                                    <i class="bi bi-github me-2"></i> D3OS Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="h4 fw-bold mb-4">Systemintegration (Architektur)</h2>
+                    <div class="bg-white p-3 rounded shadow-sm text-center">
+                        <img src="ArchitekturUserspace.png" 
+                             alt="Integration des Shared-Memory Moduls in den D3OS Kernel" 
+                             class="img-fluid rounded border shadow-sm"
+                             style="max-height: 500px;">
+                        <p class="text-muted mt-3 small">Abbildung: Integration des Shared-Memory-Moduls in die Kernel-Architektur</p>
+                    </div>
+                </section>
+
+                <section class="mb-5 bg-white p-4 rounded shadow-sm">
+                    <h2 class="h4 fw-bold border-bottom pb-2 mb-3">Technische Schwerpunkte</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="text-primary me-2">&bull;</span>
+                                    Verwaltung physischer Speicherseiten
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="text-primary me-2">&bull;</span>
+                                    Page-Table-Mapping
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="text-primary me-2">&bull;</span>
+                                    Umgang mit geteiltem Zustand durch Locks
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="text-primary me-2">&bull;</span>
+                                    Ringpuffer-Implementierung
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="text-primary me-2">&bull;</span>
+                                    Low-Level- / Kernel-Entwicklung
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="text-primary me-2">&bull;</span>
+                                    Verständnis für virtuelle Adressraumisolation und IPC
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="text-primary me-2">&bull;</span>
+                                    System-V und POSIX Shared-Memory
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="text-primary me-2">&bull;</span>
+                                    Rust Ownership-Modell und Unsafe-Rust
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
